@@ -10,7 +10,7 @@
   "module": "lib/esm/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@noble/curves": "~1.4.0",
+    "@noble/curves": "~1.4.2",
     "@noble/hashes": "~1.4.0",
     "@scure/base": "~1.1.6",
     "micro-packed": "~0.6.2"
