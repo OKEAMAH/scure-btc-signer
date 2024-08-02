@@ -12,7 +12,7 @@
   "dependencies": {
     "@noble/curves": "~1.4.0",
     "@noble/hashes": "~1.4.0",
-    "@scure/base": "~1.1.6",
+    "@scure/base": "~1.1.7",
     "micro-packed": "~0.6.2"
   },
   "devDependencies": {
