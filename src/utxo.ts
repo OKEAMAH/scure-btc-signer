@@ -475,7 +475,7 @@ export class _Estimator {
       inputsAmount += amount;
       res.push(idx);
       // inputsAmount is enough to cover cost of tx
-      if (!all && targetAmount + fee < inputsAmount)
+      if (!all && targetAmount + fee <= inputsAmount)
         return { indices: res, fee, weight: totalWeight, total: inputsAmount };
     }
     for (const idx of indices) {
@@ -501,7 +501,7 @@ export class _Estimator {
       inputsAmount += amount;
       res.push(idx);
       // inputsAmount is enough to cover cost of tx
-      if (!all && targetAmount + fee < inputsAmount)
+      if (!all && targetAmount + fee <= inputsAmount)
         return { indices: res, fee, weight: totalWeight, total: inputsAmount };
     }
     if (all) {
@@ -562,7 +562,7 @@ export class _Estimator {
     const changeFee = this.getSatoshi(changeWeight);
     let fee = s.fee;
     const change = total - this.amount - changeFee;
-    if (change > this.dust) needChange = true;
+    if (change > this.dust * this.opts.feePerByte) needChange = true;
     let inputs = indices;
     let outputs = Array.from(this.outputs);
     if (needChange) {
